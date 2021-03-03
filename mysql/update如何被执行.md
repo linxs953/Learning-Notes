@@ -3,7 +3,7 @@
 
 
 - redo log（存储层的重做日志，记录具体的物理变更）
-  -  wal，write ahead logging，写磁盘前写记录
+  - wal，write ahead logging，写磁盘前写记录
     - 当有一条记录需要更新当时候，先写到redo log，并更新内存，然后存储引擎在系统空闲当时候sync to disk
   - redo log有固定大小，写满会覆盖，that is to say，如果redo log的大小为4G，那么它最多只能保存最新的大小为4G的内容
   - 有了redo log，mysql就可以在发生异常重启的时候，保证之前提交的记录不丢失，也被成为crash-safe
