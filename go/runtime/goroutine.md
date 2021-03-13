@@ -1,6 +1,6 @@
 # goroutine
 
-- 同一地址空间
+- 同一地址空间
 - 并行执行go function
 - runtime.G结构体
 - 栈：局部变量，1-8mb
@@ -30,7 +30,7 @@
   - m：内核线程
   - m先去与之绑定的p本地队列获取goroutine，如果没有就去global queue获取 
 
-# work-stealing调度算法
+# work-stealing调度算法
 
 
 
