@@ -39,7 +39,7 @@
 
 
 - 建立连接
-  - 首要目标：同步序列号
+  - 首要目标：同步序列号
   - 确定窗口大小
   - 三次握手
     - client调用connect函数，内核发送SYN，sequence，此时client的状态变为SYNC_SENT
