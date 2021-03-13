@@ -11,7 +11,7 @@
 
 - binlog(server层的归档日志，只记录逻辑变更)
   - 为什么需要binlog和redolog两份日志
-    - 早先mysql只有MyISAM引擎，只有binlog，没有crash-safe能力
+    - 早先mysql只有MyISAM引擎，只有binlog，没有crash-safe能力
     - innodb是以插件形式进入mysql的，需要一套日志系统来保证mysql的crash-safe
 
 - redolog和binlog区别
@@ -24,7 +24,7 @@
     - 原因：为了让两个log之间的逻辑保持一直
     - 不用两阶段问题
       - 先写redolog再写binlog
-        - 写完redolog之后mysql异常重启，binlog还未写进去
+        - 写完redolog之后mysql异常重启，binlog还未写进去
         - 重启后的mysql可以通过redolog恢复这一次更新的数据
         - 如果是后续想要用binlog备份临时库的话，就会少了这一次更新，因为当前的redolog和binlog逻辑不一致
       - 先写binlog再写redolog
