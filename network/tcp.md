@@ -51,7 +51,7 @@
     - server调用read，获取报文，发送seq=ack+1表示收到
   - 四次挥手
     - client调用close函数，发送FIN以及seq，状态变为FIN_WAIT1
-    - server收到client的报文，状态变为CLOSE_WAIT
+    - server收到client的报文，状态变为CLOSE_WAIT
     - server发送ack=seq+1，调用close函数，发送FIN以及seq=client.seq，进入LAST_ACK
     - client收到server的ack，进入FIN_WAIT2，收到server的FIN以及seq，进入TIME_WAIT
     - client发送ack=server.seq+1，client会等待两分钟然后进入CLOSED
